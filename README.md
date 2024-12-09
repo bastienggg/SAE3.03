@@ -69,4 +69,8 @@ Les étudiants doivent traiter des jeux de données ouverts et :
 
 ## ⚡ **Commandes utiles**
 
-....
+installer les node_module : npm install -i
+
+installer la librairie Apexchart : npm install apexcharts --save
+
+lancer l'espace de devollopement : npm run dev
