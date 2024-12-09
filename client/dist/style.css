@@ -554,46 +554,28 @@ video {
   display: none;
 }
 
-.m-4 {
-  margin: 1rem;
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .flex {
   display: flex;
 }
 
-.size-4 {
-  width: 1rem;
-  height: 1rem;
-}
-
-.size-8 {
-  width: 2rem;
-  height: 2rem;
-}
-
-.h-1\/5 {
-  height: 20%;
+.aspect-square {
+  aspect-ratio: 1 / 1;
 }
 
 .w-full {
   width: 100%;
 }
 
-.w-4\/5 {
-  width: 80%;
-}
-
-.w-11\/12 {
-  width: 91.666667%;
-}
-
 .flex-row {
   flex-direction: row;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -608,51 +590,26 @@ video {
   justify-content: space-between;
 }
 
-.overflow-x-hidden {
-  overflow-x: hidden;
+.gap-8 {
+  gap: 2rem;
 }
 
-.rounded-sm {
-  border-radius: 0.125rem;
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .rounded-xl {
   border-radius: 0.75rem;
 }
 
-.bg-gray-100 {
+.bg-zinc-700 {
   --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  background-color: rgb(63 63 70 / var(--tw-bg-opacity));
 }
 
-.bg-white {
+.bg-zinc-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-orange-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
-}
-
-.bg-orange-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 237 213 / var(--tw-bg-opacity));
-}
-
-.bg-orange-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 247 237 / var(--tw-bg-opacity));
-}
-
-.bg-fuchsia-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 244 255 / var(--tw-bg-opacity));
-}
-
-.bg-red-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
 .p-4 {
@@ -676,18 +633,36 @@ video {
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .font-extrabold {
   font-weight: 800;
 }
 
-.text-black {
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-white {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-yellow-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 240 138 / var(--tw-text-opacity));
 }
 
 .drop-shadow-md {
