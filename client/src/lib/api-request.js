@@ -4,7 +4,7 @@
  */
 
 
-let API_URL = "TO BE DEFINED"; // URL de base de l'API (à définir)
+let API_URL = "https://mmi.unilim.fr/~guitard25/SAE_303/api/"; // URL de base de l'API (à définir)
 
 
 /**
@@ -22,20 +22,20 @@ let API_URL = "TO BE DEFINED"; // URL de base de l'API (à définir)
  *  ATTENTION : La fonction est asynchrone, donc quand on l'appelle il ne faut pas oublier "await".
  *  Exemple : let data = await getRequest(http://.../api/articles);
  */
-let getRequest = async function(uri){
+let getRequest = async function (uri) {
 
     let options = {
         method: "GET"
     };
 
-    try{
-        var response = await fetch(API_URL+uri, options); // exécution (asynchrone) de la requête et attente de la réponse
+    try {
+        var response = await fetch(API_URL + uri, options); // exécution (asynchrone) de la requête et attente de la réponse
     }
-    catch(e){
-        console.error("Echec de la requête : "+e); // affichage de l'erreur dans la console
+    catch (e) {
+        console.error("Echec de la requête : " + e); // affichage de l'erreur dans la console
         return false;
     }
-    if (response.status != 200){
+    if (response.status != 200) {
         console.error("Erreur de requête : " + response.status); // affichage de l'erreur dans la console
         return false; // si le serveur a renvoyé une erreur, on retourne false
     }  // si le serveur a renvoyé une erreur, on retourne false
@@ -55,8 +55,8 @@ let getRequest = async function(uri){
  *  Le serveur retourne en JSON la nouvelle ressource créée en base avec son identifiant.
  *  La fonction retourne les données après conversion en objet Javascript (ou false si la requête a échoué)
  */
-let postRequest = async function(uri, data){
-    
+let postRequest = async function (uri, data) {
+
 
     // Défition des options de la requêtes
     let options = {
@@ -64,14 +64,14 @@ let postRequest = async function(uri, data){
         body: data
     }
 
-    try{
-        var response = await fetch(API_URL+uri, options); // exécution (asynchrone) de la requête et attente de la réponse
+    try {
+        var response = await fetch(API_URL + uri, options); // exécution (asynchrone) de la requête et attente de la réponse
     }
-    catch(e){
-        console.error("Echec de la requête : "+e); // affichage de l'erreur dans la console
+    catch (e) {
+        console.error("Echec de la requête : " + e); // affichage de l'erreur dans la console
         return false;
     }
-    if (response.status != 200){
+    if (response.status != 200) {
         console.error("Erreur de requête : " + response.status); // affichage de l'erreur dans la console
         return false; // si le serveur a renvoyé une erreur, on retourne false
     }
@@ -90,20 +90,20 @@ let postRequest = async function(uri, data){
  * 
  *  La fonction retourne true ou false selon le succès de l'opération
  */
-let deleteRequest = async function(uri){
+let deleteRequest = async function (uri) {
     // Défition des options de la requêtes
     let options = {
         method: 'DELETE'
     }
 
-    try{
-        var response = await fetch(API_URL+uri, options); // exécution (asynchrone) de la requête et attente de la réponse
+    try {
+        var response = await fetch(API_URL + uri, options); // exécution (asynchrone) de la requête et attente de la réponse
     }
-    catch(e){
-        console.error("Echec de la requête : "+e); // affichage de l'erreur dans la console
+    catch (e) {
+        console.error("Echec de la requête : " + e); // affichage de l'erreur dans la console
         return false;
     }
-    if (response.status != 200){
+    if (response.status != 200) {
         console.error("Erreur de requête : " + response.status); // affichage de l'erreur dans la console
         return false; // si le serveur a renvoyé une erreur, on retourne false
     }
@@ -124,9 +124,9 @@ let deleteRequest = async function(uri){
  * 
  *  La fonction retourne true ou false selon le succès de l'opération
  */
-let patchRequest = async function(uri, data){
-   // Pas implémenté. TODO if needed.
+let patchRequest = async function (uri, data) {
+    // Pas implémenté. TODO if needed.
 }
 
 
-export {getRequest, postRequest, deleteRequest }
+export { getRequest, postRequest, deleteRequest }

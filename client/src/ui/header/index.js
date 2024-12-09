@@ -5,10 +5,10 @@ const template = await templateFile.text();
 
 let HeaderView = {};
 
-HeaderView.render = function(){
+HeaderView.render = function () {
     return template;
 }
 
 
 
-export {HeaderView};
+export { HeaderView };

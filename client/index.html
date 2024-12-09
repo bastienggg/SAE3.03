@@ -6,12 +6,18 @@
     <title>SAE3.DWeb-DI.03 base code</title>
     <link rel="stylesheet" href="./dist/style.css" />
   </head>
-  <body class="bg-red-50">
+  <body class="bg-zinc-900">
     <section id="header"></section>
     <main class="w-full flex justify-center items-center overflow-x-hidden p-8">
       <section class="w-full">
-        <div class="w-full bg-white drop-shadow-md rounded-xl">
-          <h1 class="text-xl w-full text-left p-4">Graphique de test :</h1>
+        <div
+          id="status-pending"
+          class="flex w-full flex-row justify-between gap-8 mb-8"
+        ></div>
+        <div class="w-full bg-zinc-700 drop-shadow-md rounded-xl">
+          <h1 class="text-xl w-full text-left p-4 text-white">
+            Graphique de test :
+          </h1>
           <div id="chart" class="w-full"></div>
         </div>
       </section>
