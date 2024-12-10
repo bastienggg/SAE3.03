@@ -7,6 +7,11 @@ ItemData.popularItems = async function () {
     return data;
 }
 
+ItemData.weakStock = async function () {
+    let data = await getRequest('items?stock=weak');
+    return data;
+}
+
 
 
 export { ItemData };

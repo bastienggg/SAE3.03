@@ -3,6 +3,7 @@ import { OrderStatusView } from "./ui/ordersStatus/index.js";
 import { PopularView } from "./ui/PopularProduct/index.js";
 import { MounthlyAmountView } from "./ui/mounthlyamount/index.js";
 import { MounthlyAmountCatView } from "./ui/amountcat/index.js";
+import { WeakStockView } from "./ui/weakstock/index.js";
 
 import { OrderData } from "./data/order.js";
 
@@ -38,6 +39,7 @@ V.init = function () {
     V.renderPopular();
     V.renderMounthlyAmount();
     V.renderMounthlyAmountCat();
+    V.renderWeakStock();
 
 }
 
@@ -56,6 +58,10 @@ V.renderMounthlyAmount = function () {
 
 V.renderMounthlyAmountCat = function () {
     V.innerHTML = MounthlyAmountCatView.render();
+}
+
+V.renderWeakStock = function () {
+    V.innerHTML = WeakStockView.render();
 }
 
 

@@ -21,6 +21,10 @@ class ItemController extends Controller {
             $p = $this->items->findPopularProduct();
             return $p==null ? false :  $p;
         }
+        elseif ($request->getParam("stock") == "weak") {
+            $p = $this->items->findWeakStockProduct();
+            return $p==null ? false :  $p;
+        }
         else {
             $p = $this->items->findPopularProduct();
             return $p==null ? false :  $p;
