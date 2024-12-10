@@ -27,6 +27,8 @@ class OrderitemRepository extends EntityRepository {
         $requete = $this->cnx->prepare("select p.product_name, SUM(oi.quantity) as total_quantity
         FROM OrderItems oi
         JOIN Products p ON oi.product_id = p.id
+        JOIN Orders o ON oi.order_id = o.id
+        WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 2 MONTH)
         GROUP BY p.product_name
         ORDER BY total_quantity DESC
         LIMIT 3");
