@@ -22,8 +22,6 @@ class OrderController extends Controller {
         return $p==null ? false :  $p;
 
     }
-
-   
 }
 
 ?>

@@ -19,19 +19,15 @@ let PopularView = {
                 categories: data.map(item => item.product_name),
                 labels: {
                     style: {
-                        colors: new Array(data.length).fill('#ffffff')// Met du blanc autant de fois qu'il y a des noms de produits
+                        colors: new Array(data.length).fill('#18181b')// Met du blanc autant de fois qu'il y a des noms de produits
                     }
                 }
             },
-            colors: ['#fef08a'], // Couleur des barres
+            colors: ['#06b6d4'], // Couleur des barres
             plotOptions: {
                 bar: {
                     horizontal: false,
                     borderRadius: 5,
-                    colors: {
-                        hover: '#ffdd57' // Couleur de survol personnalisée
-                    }
-
                 }
             },
             dataLabels: {

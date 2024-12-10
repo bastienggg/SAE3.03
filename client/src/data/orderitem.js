@@ -7,4 +7,9 @@ OrderitemsData.fetch = async function () {
     return data;
 }
 
+OrderitemsData.mouthlyamount = async function () {
+    let data = await getRequest('orderitems?amout=mounthly');
+    return data;
+}
+
 export { OrderitemsData };

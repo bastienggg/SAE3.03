@@ -32,14 +32,24 @@ class OrderitemRepository extends EntityRepository {
         GROUP BY p.product_name
         ORDER BY total_quantity DESC
         LIMIT 3");
-        
+
         $requete->execute();
-
-
         $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
 
+    }
 
-        
+    public function findMonthlyAmount(){
+        $requete = $this->cnx->prepare("select DATE_FORMAT(o.order_date, '%Y-%m') as month, SUM(oi.quantity * p.price) as total_amount
+        FROM OrderItems oi
+        JOIN Products p ON oi.product_id = p.id
+        JOIN Orders o ON oi.order_id = o.id
+        GROUP BY month
+        ORDER BY month DESC
+        LIMIT 6");
+
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
         return $result;
 
     }

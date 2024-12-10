@@ -46,7 +46,7 @@ class Orderitem implements JsonSerializable {
      *  
      */
     public function JsonSerialize(): mixed{
-        return ["id" => $this->id, "product_id" => $this->product_id, "product_name"=> $this->product_name,];
+        return ["id" => $this->id, "product_id" => $this->product_id, "product_name"=> $this->product_name,];  
     }
 
     /**

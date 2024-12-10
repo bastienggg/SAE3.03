@@ -17,9 +17,19 @@ class OrderitemController extends Controller {
 
     protected function processGetRequest(HttpRequest $request) {
 
-        // $orderitem_status = $request->getParam("orderitem_status");
-        $p = $this->orderitems->findPopularProduct();
-        return $p==null ? false :  $p;
+        if ($request->getParam("amout") == "mounthly") {
+            $p = $this->orderitems->findMonthlyAmount();
+            return $p==null ? false :  $p;
+        }
+        else {
+            $p = $this->orderitems->findPopularProduct();
+            return $p==null ? false :  $p;
+
+        }
+
+        // // $orderitem_status = $request->getParam("orderitem_status");
+        // $p = $this->orderitems->findPopularProduct();
+        // return $p==null ? false :  $p;
 
     }
 
