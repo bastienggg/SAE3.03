@@ -1,9 +1,9 @@
-import { OrderitemsData } from "../../data/orderitem.js";
+import { OrderData } from "../../data/order.js";
 import ApexCharts from 'ApexCharts';
 
 let MounthlyAmountView = {
     render: async function () {
-        let data = await OrderitemsData.mouthlyamount();
+        let data = await OrderData.mounthlyAmount();
         console.log(data);
         var options = {
             series: [{

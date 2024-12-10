@@ -1,7 +1,7 @@
 <?php
 
 require_once("Repository/EntityRepository.php");
-require_once("Class/Orderitem.php");
+require_once("Class/Item.php");
 
 
 /**
@@ -16,7 +16,7 @@ require_once("Class/Orderitem.php");
  *  c'est utile !
  *  
  */
-class OrderitemRepository extends EntityRepository {
+class ItemRepository extends EntityRepository {
 
     public function __construct(){
         // appel au constructeur de la classe mère (va ouvrir la connexion à la bdd)
@@ -39,20 +39,7 @@ class OrderitemRepository extends EntityRepository {
 
     }
 
-    public function findMonthlyAmount(){
-        $requete = $this->cnx->prepare("select DATE_FORMAT(o.order_date, '%Y-%m') as month, SUM(oi.quantity * p.price) as total_amount
-        FROM OrderItems oi
-        JOIN Products p ON oi.product_id = p.id
-        JOIN Orders o ON oi.order_id = o.id
-        GROUP BY month
-        ORDER BY month DESC
-        LIMIT 6");
-
-        $requete->execute();
-        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-
-    }
+    
     public function find($empty){
 
     }

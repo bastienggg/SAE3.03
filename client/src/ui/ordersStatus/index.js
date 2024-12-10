@@ -1,11 +1,11 @@
 
 import { genericRenderer } from "../../lib/utils.js";
 
-const templateFile = await fetch("src/ui/ordersStatusPending/template.html");
+const templateFile = await fetch("src/ui/ordersStatus/template.html");
 const template = await templateFile.text();
 
 
-let StatusPendingView = {
+let OrderStatusView = {
 
     render: function (data) {
         let html = "";
@@ -18,4 +18,4 @@ let StatusPendingView = {
 
 }
 
-export { StatusPendingView };
+export { OrderStatusView };

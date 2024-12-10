@@ -1,30 +1,29 @@
 <?php
 require_once "Controller.php";
-require_once "Repository/OrderitemRepository.php";
+require_once "Repository/ItemRepository.php";
 
 
 
 // This class inherits the jsonResponse method  and the $cnx propertye from the parent class Controller
 // Only the process????Request methods need to be (re)defined.
 
-class OrderitemController extends Controller {
+class ItemController extends Controller {
 
-    private OrderitemRepository $orderitems;
+    private ItemRepository $items;
 
     public function __construct(){
-        $this->orderitems = new OrderitemRepository();
+        $this->items = new ItemRepository();
     }
 
     protected function processGetRequest(HttpRequest $request) {
 
-        if ($request->getParam("amout") == "mounthly") {
-            $p = $this->orderitems->findMonthlyAmount();
+        if ($request->getParam("popular") == "all") {
+            $p = $this->items->findPopularProduct();
             return $p==null ? false :  $p;
         }
         else {
-            $p = $this->orderitems->findPopularProduct();
+            $p = $this->items->findPopularProduct();
             return $p==null ? false :  $p;
-
         }
 
         // // $orderitem_status = $request->getParam("orderitem_status");

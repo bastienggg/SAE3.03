@@ -16,10 +16,16 @@ class OrderController extends Controller {
     }
 
     protected function processGetRequest(HttpRequest $request) {
+        
+        if ($request->getParam("amount") == "all") {
+            $p = $this->orders->findMonthlyAmount();
+            return $p==null ? false :  $p;
+        }
+        else {
+            $p = $this->orders->findStatus();
+            return $p==null ? false :  $p;
 
-        // $order_status = $request->getParam("order_status");
-        $p = $this->orders->findStatus();
-        return $p==null ? false :  $p;
+        }
 
     }
 }

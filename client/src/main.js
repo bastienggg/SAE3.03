@@ -1,6 +1,5 @@
 import { HeaderView } from "./ui/header/index.js";
-// import { ChartView } from "./ui/chartTest/index.js";
-import { StatusPendingView } from "./ui/ordersStatusPending/index.js";
+import { OrderStatusView } from "./ui/ordersStatus/index.js";
 import { PopularView } from "./ui/PopularProduct/index.js";
 import { MounthlyAmountView } from "./ui/mounthlyamount/index.js";
 
@@ -9,6 +8,8 @@ import { OrderData } from "./data/order.js";
 
 import './index.css';
 
+// Import du pour le graphique de test
+// import { ChartView } from "./ui/chartTest/index.js";
 
 
 let C = {};
@@ -19,14 +20,20 @@ C.init = async function () {
 
 let V = {
     header: document.querySelector("#header"),
-    statuspending: document.querySelector("#status")
+    status: document.querySelector("#status")
 
 };
+// fonction pour le graphique de test
+// V.renderChart = function () {
+//     V.innerHTML = ChartView.render();
+// }
 
 V.init = function () {
-    V.renderHeader();
+    // Fonction pour le grphique de teste
     // V.renderChart();
-    V.renderStatusPending();
+
+    V.renderHeader();
+    V.renderStatus();
     V.renderPopular();
     V.renderMounthlyAmount();
 
@@ -35,9 +42,7 @@ V.init = function () {
 V.renderHeader = function () {
     V.header.innerHTML = HeaderView.render();
 }
-// V.renderChart = function () {
-//     V.innerHTML = ChartView.render();
-// }
+
 
 V.renderPopular = function () {
     V.innerHTML = PopularView.render();
@@ -48,10 +53,10 @@ V.renderMounthlyAmount = function () {
 }
 
 
-V.renderStatusPending = async function () {
-    let data = await OrderData.fetch("Pending");
+V.renderStatus = async function () {
+    let data = await OrderData.status();
     console.log(data);
-    V.statuspending.innerHTML = StatusPendingView.render(data);
+    V.status.innerHTML = OrderStatusView.render(data);
 }
 
 

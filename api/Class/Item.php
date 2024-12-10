@@ -8,7 +8,7 @@
  *  qui oblige à définir une méthode jsonSerialize. Cette méthode permet de dire comment les objets
  *  de la classe Orderitem doivent être converti en JSON. Voire la méthode pour plus de détails.
  */
-class Orderitem implements JsonSerializable {
+class Item implements JsonSerializable {
     private int $id; // id du 
 
     public function __construct(int $id){

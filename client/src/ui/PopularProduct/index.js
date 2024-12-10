@@ -1,9 +1,9 @@
-import { OrderitemsData } from "../../data/orderitem.js";
+import { ItemData } from "../../data/item.js";
 import ApexCharts from 'ApexCharts';
 
 let PopularView = {
     render: async function () {
-        let data = await OrderitemsData.fetch();
+        let data = await ItemData.popularItems();
         console.log(data);
         var options = {
             chart: {

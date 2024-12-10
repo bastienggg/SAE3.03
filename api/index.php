@@ -1,7 +1,7 @@
 <?php
 require_once "Class/HttpRequest.php";
 require_once "Controller/OrderController.php";
-require_once "Controller/OrderitemController.php";
+require_once "Controller/ItemController.php";
 
 
 /** IMPORTANT
@@ -27,7 +27,7 @@ require_once "Controller/OrderitemController.php";
  */
 $router = [
     "orders" => new OrderController(),
-    "orderitems" => new OrderitemController()
+    "items" => new ItemController()
 
 ];
 
