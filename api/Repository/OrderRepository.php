@@ -47,6 +47,22 @@ class OrderRepository extends EntityRepository {
         return $result;
 
     }
+
+    
+    public function findMonthlyAmountCat(){
+        $requete = $this->cnx->prepare("select DATE_FORMAT(o.order_date, '%Y-%m') as month, p.category as category, SUM(oi.quantity * p.price) as total_amount
+        FROM OrderItems oi
+        JOIN Products p ON oi.product_id = p.id
+        JOIN Orders o ON oi.order_id = o.id
+        WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+        GROUP BY month, category
+        ORDER BY month DESC, category");
+        
+
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
     public function find($empty){
 
     }

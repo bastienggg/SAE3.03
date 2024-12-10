@@ -10,5 +10,9 @@ OrderData.mounthlyAmount = async function () {
     let data = await getRequest('orders?amount=all');
     return data;
 }
+OrderData.mounthlyAmountCat = async function () {
+    let data = await getRequest('orders?amount=categorie');
+    return data;
+}
 
 export { OrderData };
