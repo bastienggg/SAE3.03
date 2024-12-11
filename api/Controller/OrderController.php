@@ -19,10 +19,16 @@ class OrderController extends Controller {
         if ($request->getParam("amount") == "all") {
             $p = $this->orders->findMonthlyAmount();
             return $p == null ? false : $p;
-        } else if ($request->getParam("amount") == "categorie") {
+        } 
+        else if ($request->getParam("amount") == "categorie") {
             $p = $this->orders->findMonthlyAmountCat();
             return $p == null ? false : $p;
-        } else {
+        } 
+        else if ($request->getParam("customer") != null) {
+            $p = $this->orders->findOrderByCustomer($request->getParam("customer"));
+            return $p == null ? false : $p;
+        }
+        else {
             $p = $this->orders->findStatus();
             return $p == null ? false : $p;
         }

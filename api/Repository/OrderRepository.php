@@ -63,6 +63,21 @@ class OrderRepository extends EntityRepository {
         $result = $requete->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function findOrderByCustomer($id){
+        $requete = $this->cnx->prepare("select p.category, SUM(oi.quantity) as total_quantity
+        FROM OrderItems oi
+        JOIN Products p ON oi.product_id = p.id
+        JOIN Orders o ON oi.order_id = o.id
+        WHERE o.customer_id = :id
+        GROUP BY p.category");
+        
+        $requete->bindParam(":id", $id);
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function find($empty){
 
     }

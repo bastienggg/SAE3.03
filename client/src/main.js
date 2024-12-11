@@ -5,6 +5,7 @@ import { MounthlyAmountView } from "./ui/mounthlyamount/index.js";
 import { MounthlyAmountCatView } from "./ui/amountcat/index.js";
 import { WeakStockView } from "./ui/weakstock/index.js";
 import { ProductIdView } from "./ui/EvolutionProduct/index.js";
+import { OrderByCustomerView } from "./ui/ordercustomer/index.js";
 
 import { OrderData } from "./data/order.js";
 
@@ -42,7 +43,9 @@ V.init = function () {
     V.renderMounthlyAmountCat();
     V.renderWeakStock();
     // V.renderProductId();
-    C.setupEventListeners();
+    // V.renderOrderByCustomer();
+    C.setupEventListenersProduct();
+    C.setupEventListenersCustomer();
 
 }
 
@@ -72,21 +75,33 @@ V.renderProductId = function (id) {
     V.innerHTML = ProductIdView.render(id);
 }
 
+V.renderOrderByCustomer = function (id) {
+    document.querySelector("#customerid").innerHTML = "";
+    V.innerHTML = OrderByCustomerView.render(id);
+}
+
+
 
 V.renderStatus = async function () {
     let data = await OrderData.status();
     console.log(data);
     V.status.innerHTML = OrderStatusView.render(data);
 }
-C.setupEventListeners = function () {
+C.setupEventListenersProduct = function () {
     document.querySelector("#searchProduct").addEventListener("input", function (event) {
         let searchValue = parseInt(event.target.value, 10);
-        // Call the function to handle the search value change
-        // V.handleSearchInputChange(searchValue);
         console.log(searchValue);
         V.renderProductId(searchValue);
     });
 };
+
+C.setupEventListenersCustomer = function () {
+    document.querySelector("#searchCustomer").addEventListener("input", function (event) {
+        let searchValue = parseInt(event.target.value, 10);
+        console.log(searchValue);
+        V.renderOrderByCustomer(searchValue);
+    });
+}
 
 
 C.init();
