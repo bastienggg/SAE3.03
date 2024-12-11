@@ -54,6 +54,21 @@ class ItemRepository extends EntityRepository {
         return $result;
     }
 
+    public function findItemById($id){
+        $requete = $this->cnx->prepare("select p.product_name, MONTH(o.order_date) as month, YEAR(o.order_date) as year, SUM(oi.quantity) as total_quantity
+        FROM OrderItems oi
+        JOIN Products p ON oi.product_id = p.id
+        JOIN Orders o ON oi.order_id = o.id
+        WHERE p.id = :id AND o.order_date >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+        GROUP BY p.product_name, year, month
+        ORDER BY year, month");
+        
+        $requete->bindParam(':id', $id);
+        $requete->execute();
+        $result = $requete->fetchALL(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     
     public function find($empty){
 

@@ -4,6 +4,7 @@ import { PopularView } from "./ui/PopularProduct/index.js";
 import { MounthlyAmountView } from "./ui/mounthlyamount/index.js";
 import { MounthlyAmountCatView } from "./ui/amountcat/index.js";
 import { WeakStockView } from "./ui/weakstock/index.js";
+import { ProductIdView } from "./ui/EvolutionProduct/index.js";
 
 import { OrderData } from "./data/order.js";
 
@@ -40,6 +41,8 @@ V.init = function () {
     V.renderMounthlyAmount();
     V.renderMounthlyAmountCat();
     V.renderWeakStock();
+    // V.renderProductId();
+    C.setupEventListeners();
 
 }
 
@@ -64,12 +67,26 @@ V.renderWeakStock = function () {
     V.innerHTML = WeakStockView.render();
 }
 
+V.renderProductId = function (id) {
+    document.querySelector("#productid").innerHTML = "";
+    V.innerHTML = ProductIdView.render(id);
+}
+
 
 V.renderStatus = async function () {
     let data = await OrderData.status();
     console.log(data);
     V.status.innerHTML = OrderStatusView.render(data);
 }
+C.setupEventListeners = function () {
+    document.querySelector("#searchProduct").addEventListener("input", function (event) {
+        let searchValue = parseInt(event.target.value, 10);
+        // Call the function to handle the search value change
+        // V.handleSearchInputChange(searchValue);
+        console.log(searchValue);
+        V.renderProductId(searchValue);
+    });
+};
 
 
 C.init();

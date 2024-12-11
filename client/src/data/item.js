@@ -12,6 +12,11 @@ ItemData.weakStock = async function () {
     return data;
 }
 
+ItemData.productById = async function (id) {
+    let data = await getRequest(`items?id=${id}`);
+    return data;
+}
+
 
 
 export { ItemData };
