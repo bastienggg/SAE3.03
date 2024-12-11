@@ -25,12 +25,9 @@ let ProductIdView = {
                 enabled: false
             },
             stroke: {
-                curve: 'straight'
+                curve: 'smooth'
             },
-            title: {
-                text: 'Product Trends by Month',
-                align: 'left'
-            },
+
             grid: {
                 row: {
                     colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns

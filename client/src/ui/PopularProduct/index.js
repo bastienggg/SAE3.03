@@ -14,6 +14,10 @@ let PopularView = {
                 data: data.map(item => item.total_quantity),
 
             }],
+            title: {
+                text: 'Popular Products',
+                align: 'left'
+            },
 
             xaxis: {
                 categories: data.map(item => item.product_name),
@@ -23,7 +27,7 @@ let PopularView = {
                     }
                 }
             },
-            colors: ['#06b6d4'], // Couleur des barres
+            // colors: ['#06b6d4'], // Couleur des barres
             plotOptions: {
                 bar: {
                     horizontal: false,

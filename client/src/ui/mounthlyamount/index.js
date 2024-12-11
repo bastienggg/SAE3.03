@@ -12,15 +12,19 @@ let MounthlyAmountView = {
 
             }],
             chart: {
-                height: 350,
+                height: 250,
                 type: 'line',
             },
-            forecastDataPoints: {
-                count: 7
-            },
+            // forecastDataPoints: {
+            //     count: 7
+            // },
             stroke: {
                 width: 5,
                 curve: 'smooth'
+            },
+            title: {
+                text: 'Monthly Amount',
+                align: 'left'
             },
             xaxis: {
                 name: 'Mounth',
@@ -31,13 +35,13 @@ let MounthlyAmountView = {
                     }
                 }
             },
-            fill: {
-                type: 'gradient',
-                gradient: {
-                    shade: 'dark',
-                    gradientToColors: ['#06b6d4', '#164e63'],
-                },
-            }
+            // fill: {
+            //     type: 'gradient',
+            //     gradient: {
+            //         shade: 'dark',
+            //         gradientToColors: ['#06b6d4', '#164e63'],
+            //     },
+            // }
         };
 
         var chart = new ApexCharts(document.querySelector("#mounthlyamount"), options);

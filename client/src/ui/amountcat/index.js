@@ -23,7 +23,7 @@ let MounthlyAmountCatView = {
                 data: seriesData[category].reverse()
             })),
             chart: {
-                height: 350,
+                height: 400,
                 type: 'line',
                 dropShadow: {
                     enabled: true,
