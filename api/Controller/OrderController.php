@@ -33,6 +33,14 @@ class OrderController extends Controller {
             $p = $this->orders->findOrderByCustomer($request->getParam("customer"));
             return $p == null ? false : $p;
         }
+        else if ($request->getParam("mouth") == "all") {
+            $p = $this->orders->findAllMounth();
+            return $p == null ? false : $p;
+        }
+        else if($request->getParam("country")!= null) {
+            $p = $this->orders->findAllCountry($request->getParam("country"));
+            return $p == null ? false : $p;
+        }
         
         else {
             $p = $this->orders->findStatus();

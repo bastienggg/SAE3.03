@@ -22,5 +22,12 @@ OrderData.Allclient = async function () {
     let data = await getRequest('orders?customer=all');
     return data;
 }
-
+OrderData.AllMounth = async function () {
+    let data = await getRequest('orders?mouth=all');
+    return data;
+}
+OrderData.Radial = async function (id) {
+    let data = await getRequest(`orders?country=${id}`);
+    return data;
+}
 export { OrderData };

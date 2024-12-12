@@ -90,6 +90,28 @@ class OrderRepository extends EntityRepository {
         return $result;
     }
 
+    public function findAllMounth(){
+        $requete = $this->cnx->prepare("select DATE_FORMAT(order_date, '%Y-%m') as month FROM Orders GROUP BY month ORDER BY month DESC");
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function findAllCountry($mouth){
+        $requete = $this->cnx->prepare("select c.country, COUNT(o.id) as total_orders
+        FROM Orders o
+        JOIN Customers c ON o.customer_id = c.id
+        WHERE DATE_FORMAT(o.order_date, '%Y-%m') = :month
+        GROUP BY c.country
+        ORDER BY total_orders DESC
+        ");
+        $requete->bindParam(":month", $mouth);
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
+    }
+
     public function find($empty){
 
     }
