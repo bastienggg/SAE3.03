@@ -17,6 +17,11 @@ ItemData.productById = async function (id) {
     return data;
 }
 
+ItemData.findAll = async function () {
+    let data = await getRequest('items');
+    return data;
+}
+
 
 
 export { ItemData };

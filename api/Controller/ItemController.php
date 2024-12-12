@@ -30,7 +30,7 @@ class ItemController extends Controller {
             return $p==null ? false :  $p;
         }
         else {
-            $p = $this->items->findPopularProduct();
+            $p = $this->items->findAll();
             return $p==null ? false :  $p;
         }
 

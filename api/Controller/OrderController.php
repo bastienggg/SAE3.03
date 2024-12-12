@@ -25,9 +25,15 @@ class OrderController extends Controller {
             return $p == null ? false : $p;
         } 
         else if ($request->getParam("customer") != null) {
+            if ($request ->getParam("customer") == "all") {
+                $p = $this->orders->findAllCustomer();
+                return $p == null ? false : $p;
+                
+            }
             $p = $this->orders->findOrderByCustomer($request->getParam("customer"));
             return $p == null ? false : $p;
         }
+        
         else {
             $p = $this->orders->findStatus();
             return $p == null ? false : $p;

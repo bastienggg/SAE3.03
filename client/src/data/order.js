@@ -18,5 +18,9 @@ OrderData.OrderByCustomer = async function (id) {
     let data = await getRequest(`orders?customer=${id}`);
     return data;
 }
+OrderData.Allclient = async function () {
+    let data = await getRequest('orders?customer=all');
+    return data;
+}
 
 export { OrderData };

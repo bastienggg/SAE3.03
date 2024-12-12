@@ -6,8 +6,11 @@ import { MounthlyAmountCatView } from "./ui/amountcat/index.js";
 import { WeakStockView } from "./ui/weakstock/index.js";
 import { ProductIdView } from "./ui/EvolutionProduct/index.js";
 import { OrderByCustomerView } from "./ui/ordercustomer/index.js";
+import { CustomerView } from "./ui/selectClient/index.js";
+import { ProductsView } from "./ui/selectProduct/index.js";
 
 import { OrderData } from "./data/order.js";
+import { ItemData } from "./data/item.js";
 
 
 import './index.css';
@@ -24,7 +27,9 @@ C.init = async function () {
 
 let V = {
     header: document.querySelector("#header"),
-    status: document.querySelector("#status")
+    status: document.querySelector("#status"),
+    customer: document.querySelector("#selectcustomers"),
+    product: document.querySelector("#selectproduct"),
 
 };
 // fonction pour le graphique de test
@@ -42,6 +47,8 @@ V.init = function () {
     V.renderMounthlyAmount();
     V.renderMounthlyAmountCat();
     V.renderWeakStock();
+    V.renderCustomer();
+    V.renderProduct();
     // V.renderProductId();
     // V.renderOrderByCustomer();
     C.setupEventListenersProduct();
@@ -87,8 +94,22 @@ V.renderStatus = async function () {
     console.log(data);
     V.status.innerHTML = OrderStatusView.render(data);
 }
+
+V.renderCustomer = async function () {
+    let data = await OrderData.Allclient();
+    console.log(data);
+    V.customer.innerHTML = CustomerView.render(data);
+}
+
+V.renderProduct = async function () {
+    let data = await ItemData.findAll();
+    console.log(data);
+    V.product.innerHTML = ProductsView.render(data);
+}
+
+
 C.setupEventListenersProduct = function () {
-    document.querySelector("#searchProduct").addEventListener("input", function (event) {
+    document.querySelector("#selectproduct").addEventListener("input", function (event) {
         let searchValue = parseInt(event.target.value, 10);
         console.log(searchValue);
         V.renderProductId(searchValue);
@@ -96,7 +117,7 @@ C.setupEventListenersProduct = function () {
 };
 
 C.setupEventListenersCustomer = function () {
-    document.querySelector("#searchCustomer").addEventListener("input", function (event) {
+    document.querySelector("#selectcustomers").addEventListener("input", function (event) {
         let searchValue = parseInt(event.target.value, 10);
         console.log(searchValue);
         V.renderOrderByCustomer(searchValue);

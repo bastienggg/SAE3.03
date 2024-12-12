@@ -40,14 +40,15 @@ class ItemRepository extends EntityRepository {
     }
 
     public function findWeakStockProduct(){
-        $requete = $this->cnx->prepare("select p.product_name, SUM(oi.quantity) as total_quantity
-        FROM OrderItems oi
-        JOIN Products p ON oi.product_id = p.id
-        JOIN Orders o ON oi.order_id = o.id
-        WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 2 MONTH)
-        GROUP BY p.product_name
-        ORDER BY total_quantity ASC
-        LIMIT 10");
+        $requete = $this->cnx->prepare("select 
+        id,
+        product_name,
+        stock
+        FROM 
+        Products
+        ORDER BY 
+        stock ASC
+        LIMIT 10;");
 
         $requete->execute();
         $result = $requete->fetchAll(PDO::FETCH_ASSOC);
@@ -69,13 +70,18 @@ class ItemRepository extends EntityRepository {
         return $result;
     }
 
+    public function findAll(){
+        $requete = $this->cnx->prepare("select id, product_name FROM Products");
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     
     public function find($empty){
 
     }
-    public function findAll(){
 
-    }
     public function save($empty){
 
     }

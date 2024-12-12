@@ -39,7 +39,7 @@
         </div>
 
         <div class="flex flex-row gap-8">
-          <div class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
+          <div class="w-2/3 bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
             <!-- <h1 class="text-xl w-full text-left p-4 text-zinc-900">
               Le
               <span class="text-cyan-500 font-bold">montant mensuel</span> des
@@ -50,7 +50,7 @@
             <div id="mounthlyamountcat" class="w-full text-zinc-900"></div>
           </div>
           <div
-            class="w-1/3 bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4 pb-0"
+            class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4 pb-0"
           >
             <!-- <h1 class="text-xl w-full text-left p-4 text-zinc-900">
               Les <span class="text-cyan-500 font-bold">10 produit</span> avec
@@ -63,32 +63,34 @@
         <div class="flex flex-row gap-8">
           <div class="w-1/3 bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
             <h1 class="text-xl w-full text-left p-4 text-zinc-900">
-              Nombre de vente pour le produit
-            </h1>
-
-            <div class="p-4">
-              <input
-                type="number"
-                id="searchCustomer"
-                class="w-full p-2 rounded-md border border-gray-300"
-                placeholder="Rechercher un client avec sont id..."
-              />
-            </div>
-            <div id="customerid" class="w-full text-zinc-900"></div>
-          </div>
-          <div class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
-            <h1 class="text-xl w-full text-left p-4 text-zinc-900">
               Nombre de vente pour le produit slectionner
             </h1>
             <div class="p-4">
-              <input
+              <!-- <input
                 type="number"
                 id="searchProduct"
                 class="w-full p-2 rounded-md border border-gray-300"
                 placeholder="Rechercher un produit avec sont id..."
-              />
+              /> -->
+              <select name="product" id="selectproduct"></select>
             </div>
             <div id="productid" class="w-full text-zinc-900"></div>
+          </div>
+          <div class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
+            <h1 class="text-xl w-full text-left p-4 text-zinc-900">
+              Nombre de vente pour le produit
+            </h1>
+
+            <div class="p-4">
+              <!-- <input
+                type="number"
+                id="searchCustomer"
+                class="w-full p-2 rounded-md border border-gray-300"
+                placeholder="Rechercher un client avec sont id..."
+              /> -->
+              <select name="customer" id="selectcustomers"></select>
+            </div>
+            <div id="customerid" class="w-full text-zinc-900"></div>
           </div>
         </div>
       </section>
