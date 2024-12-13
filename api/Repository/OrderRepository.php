@@ -112,6 +112,18 @@ class OrderRepository extends EntityRepository {
 
     }
 
+    public function heatmap(){
+        $requete = $this->cnx->prepare("select DATE_FORMAT(o.order_date, '%Y-%m') as month, c.country, COUNT(o.id) as total_orders
+        FROM Orders o
+        JOIN Customers c ON o.customer_id = c.id
+        GROUP BY month, c.country
+        ORDER BY month DESC, c.country");
+        
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function find($empty){
 
     }

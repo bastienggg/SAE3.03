@@ -30,4 +30,8 @@ OrderData.Radial = async function (id) {
     let data = await getRequest(`orders?country=${id}`);
     return data;
 }
+OrderData.heatmap = async function () {
+    let data = await getRequest('orders?heatmap=all');
+    return data;
+}
 export { OrderData };

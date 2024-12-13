@@ -10,6 +10,7 @@ import { CustomerView } from "./ui/selectClient/index.js";
 import { ProductsView } from "./ui/selectProduct/index.js";
 import { MounthsView } from "./ui/selectMounth/index.js";
 import { MounthIdView } from "./ui/radialmap/index.js";
+import { HeatMapView } from "./ui/heatmap/index.js";
 
 import { OrderData } from "./data/order.js";
 import { ItemData } from "./data/item.js";
@@ -53,6 +54,7 @@ V.init = function () {
     V.renderCustomer();
     V.renderProduct();
     V.renderMounths();
+    V.renderHeatMap();
     // V.renderRadial();
     // V.renderProductId();
     // V.renderOrderByCustomer();
@@ -81,6 +83,10 @@ V.renderMounthlyAmountCat = function () {
 
 V.renderWeakStock = function () {
     V.innerHTML = WeakStockView.render();
+}
+
+V.renderHeatMap = function () {
+    V.innerHTML = HeatMapView.render();
 }
 
 V.renderProductId = function (id) {

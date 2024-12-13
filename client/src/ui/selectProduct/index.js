@@ -1,6 +1,6 @@
 import { genericRenderer } from "../../lib/utils.js";
 
-const templateFile = await fetch("./ui/selectProduct/template.html");
+const templateFile = await fetch("./src/ui/selectProduct/template.html");
 const template = await templateFile.text();
 
 
