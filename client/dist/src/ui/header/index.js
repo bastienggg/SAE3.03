@@ -1,5 +1,5 @@
 
-const templateFile = await fetch("./ui/header/template.html");
+const templateFile = await fetch("./src/ui/header/template.html");
 const template = await templateFile.text();
 
 
