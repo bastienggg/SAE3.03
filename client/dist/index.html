@@ -3,28 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SAE3.DWeb-DI.03 base code</title>
+    <title>Dashboard | Bastien Guitard</title>
 
-    <script type="module" crossorigin src="./assets/index-BQux_iQ3.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Pym1LSMv.css" />
+    <script type="module" crossorigin src="./assets/index-tItjxKTD.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D6rHwzVg.css" />
   </head>
   <body class="bg-stone-100">
     <section id="header"></section>
-    <main class="w-full flex justify-center items-center overflow-x-hidden p-8">
+    <main
+      class="w-full flex justify-center items-center overflow-x-hidden p-2 md:p-8 absolute"
+    >
       <section class="w-full">
         <div
           id="status"
-          class="flex w-full flex-row justify-between gap-8 mb-8"
+          class="flex w-full flex-row justify-between gap-1 md:gap-8 mb-2 md:mb-8"
         ></div>
-
-        <div class="flex flex-row gap-8">
-          <div class="w-1/3 bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
+        <div class="flex flex-col md:flex-row gap-0 md:gap-8">
+          <div
+            class="w-full md:w-1/3 bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4"
+          >
             <div id="popular" class="w-full text-zinc-900"></div>
           </div>
-          <div class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
+          <div
+            class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-2 md:mb-8 p-4"
+          >
             <div id="mounthlyamount" class="w-full text-zinc-900"></div>
           </div>
-          <div class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
+          <div
+            class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-2 md:mb-8 p-4"
+          >
             <div class="p-4">
               <select name="customer" id="selectmounth"></select>
             </div>
@@ -32,18 +39,22 @@
           </div>
         </div>
 
-        <div class="flex flex-row gap-8">
-          <div class="w-2/3 bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
+        <div class="flex flex-col md:flex-row gap-0 md:gap-8">
+          <div
+            class="w-full md:w-2/3 bg-stone-50 drop-shadow-md rounded-xl mb-2 md:mb-8 p-4"
+          >
             <div id="mounthlyamountcat" class="w-full text-zinc-900"></div>
           </div>
           <div
-            class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4 pb-0"
+            class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-2 md:mb-8 p-4 pb-0"
           >
             <div id="weakstock" class="w-full text-zinc-900 h-full"></div>
           </div>
         </div>
-        <div class="flex flex-row gap-8">
-          <div class="w-1/3 bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
+        <div class="flex flex-col md:flex-row gap-0 md:gap-8">
+          <div
+            class="w-full md:w-1/3 bg-stone-50 drop-shadow-md rounded-xl mb-2 md:mb-8 p-4"
+          >
             <h1 class="text-xl w-full text-left p-4 text-zinc-900">
               Nombre de vente pour le produit slectionner
             </h1>
@@ -52,7 +63,9 @@
             </div>
             <div id="productid" class="w-full text-zinc-900"></div>
           </div>
-          <div class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
+          <div
+            class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-2 md:mb-8 p-4"
+          >
             <h1 class="text-xl w-full text-left p-4 text-zinc-900">
               Nombre de vente pour le produit
             </h1>
@@ -63,7 +76,9 @@
             <div id="customerid" class="w-full text-zinc-900"></div>
           </div>
         </div>
-        <div class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-8 p-4">
+        <div
+          class="w-full bg-stone-50 drop-shadow-md rounded-xl mb-2 md:mb-8 p-4"
+        >
           <div id="heatmap" class="w-full text-zinc-900"></div>
         </div>
       </section>
