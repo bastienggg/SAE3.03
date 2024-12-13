@@ -4,7 +4,7 @@
  */
 
 
-let API_URL = "https://mmi.unilim.fr/~guitard25/SAE_303/api/"; // URL de base de l'API (à définir)
+let API_URL = "https://bastienguitard.fr/SAE3.03-Dashboard/api/"; // URL de base de l'API (à définir)
 
 
 /**
