@@ -15,7 +15,7 @@ import { OrderData } from "./data/order.js";
 import { ItemData } from "./data/item.js";
 
 
-import './index.css';
+// import './index.css';
 
 // Import du pour le graphique de test
 // import { ChartView } from "./ui/chartTest/index.js";
